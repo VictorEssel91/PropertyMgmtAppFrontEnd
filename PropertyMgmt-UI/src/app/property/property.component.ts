@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class PropertyComponent {
 
+PropertyArray : any[] = [];
+
+
+propertyAddress: string = "";
+propertyRentedStatus: string = "";
+propertyContactNumber: number =0;
+
+propertyId = "";
+
 }
+
+
