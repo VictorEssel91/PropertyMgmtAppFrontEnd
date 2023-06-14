@@ -24,7 +24,7 @@
 
         <div class="form-group">
           <button type="reset" class="btn btn-danger pull-right">Clear</button> &nbsp;
-          <button type="button" class="btn btn-primary pull-right">Save</button>
+          <button type="submit" class="btn btn-primary pull-right" (click)="save()">Save</button>
 
 
         </div>
@@ -36,7 +36,7 @@
 <!--List Property Table-->
 
   <div class="col-md-7">
-    <h4>List Property</h4>
+    <h4>Property Portfolio</h4>
     <hr>
     <div class="card card-body bg-light">
       <table class="table">
@@ -51,34 +51,21 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>1460 Obey St</td>
-          <td>Rented</td>
-          <td>4124442804</td>
+        <tr *ngFor="let PropertyItem of PropertyArray">
+        <tr *ngFor="let PropertyItem of PropertyArray">
+          <th scope="row">{{PropertyItem.propertyId  }}</th>
+          <td>{{PropertyItem.propertyAddress }}</td>
+          <td>{{PropertyItem.propertyRentedStatus }}</td>
+          <td>{{PropertyItem.propertyContactNumber }}</td>
           <td>
             <div class = btn-group>
-              <button class="btn btn-primary">Edit</button>
-              <button class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-success" (click)="setUpdate(PropertyItem)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="setDelete(PropertyItem)">Delete</button>
             </div>
-
-
 
           </td>
         </tr>
 
-        <tr>
-          <th scope="row">1</th>
-          <td>304 Barr Ave</td>
-          <td>Rented</td>
-          <td>4125563456</td>
-          <td>
-            <div class = btn-group>
-              <button class="btn btn-primary">Edit</button>
-              <button class="btn btn-danger">Delete</button>
-            </div>
-          </td>
-        </tr>
 
         </tbody>
       </table>
